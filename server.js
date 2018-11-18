@@ -7,6 +7,7 @@ const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
 
+// Init express
 const app = express();
 
 // Body parser middleware

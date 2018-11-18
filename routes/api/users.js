@@ -30,6 +30,7 @@ router.post('/register', (req, res) => {
   }
 
   User.findOne({ email: req.body.email }).then(user => {
+    // Email already exists
     if (user) {
       errors.email = 'Email already exists';
       return res.status(400).json(errors);
@@ -87,7 +88,7 @@ router.post('/login', (req, res) => {
     bcrypt.compare(password, user.password).then(isMatch => {
       if (isMatch) {
         // User matched
-        const payload = { id: user.id, name: user.name, avatar: user.avtar }; // Create JWT payload
+        const payload = { id: user.id, name: user.name, avatar: user.avatar }; // Create JWT payload
         // Sign token
         jwt.sign(
           payload,
