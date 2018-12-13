@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
-import classnames from 'classnames';
 import { connect } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
 import TextFieldGroup from '../common/TextFieldGroup';
@@ -93,7 +92,11 @@ class Register extends Component {
 									onChange={this.onChange}
 									error={errors.password2}
 								/>
-								<input type="submit" className="btn btn-info btn-block mt-4" />
+								<input
+									type="submit"
+									className="btn btn-info btn-block mt-4"
+									value="Register"
+								/>
 							</form>
 						</div>
 					</div>
